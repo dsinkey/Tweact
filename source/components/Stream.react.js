@@ -8,7 +8,7 @@ var Stream = React.createClass({
 
 	getInitialState: function(){
 		return {
-			tweet: null
+			tweet: TweetStore.getTweet()
 		}
 	},
 
