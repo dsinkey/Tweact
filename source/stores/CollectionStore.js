@@ -24,5 +24,10 @@ function setCollectionName(name){
 	collectionName = name;
 }
 
+function emitChange(){
+	Collection.emit(CHANGE_EVENT);
+}
+
+
 
 module.exports = CollectionStore;
