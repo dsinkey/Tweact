@@ -12,6 +12,20 @@ var Stream = React.createClass({
 		}
 	},
 
+	componetDidMount: function(){
+		TweetStore.addChangeListener(this.onTweetChange);
+	},
+
+	componetWillUnmount: function(){
+		TweetStore.removeChangeListener(this.onTweetChange);
+	},
+
+	onTweetChange: function(){
+		this.setState({
+			tweet: TweetStore.getTweet()
+		});
+	},
+
 	// componetDidMount: function(){
 	// 	SnapkiteStreamClient.initializeStream(this.handleNewTweet);
 	// },
