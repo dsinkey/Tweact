@@ -1,0 +1,39 @@
+{
+  "name": "snapterest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "^6.0.1",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^6.4.0",
+    "browserify": "^12.0.1",
+    "gulp": "^3.9.0",
+    "jest-cli": "^0.8.2",
+    "lodash": "^3.10.1",
+    "react-addons-test-utils": "^0.14.5",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "flux": "^2.1.1",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.5",
+    "snapkite-stream-client": "^1.0.3"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  }
+}
