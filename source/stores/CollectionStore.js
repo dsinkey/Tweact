@@ -45,7 +45,29 @@ var CollectionStore = assign({}, EventEmitter.prototype,{
 	getCollectionName: function(){
 		return collectionName;
 	}
-	
+
 });
+
+function handleAction(action){
+	switch (action.type){
+
+		case 'add_tweet_to_collection': addTweetToCollection(action.tweet);
+		emitChange();
+		break;
+
+		case 'remove_tweet_from_collection': addTweetToCollection(action.tweet);
+		emitChange();
+		break;
+
+		case 'set_collection_name': addTweetToCollection(action.tweet);
+		emitChange();
+		break;
+
+		default: //do nothing
+
+	}
+}
+
+CollectionStore.dispatchToken = AppDispatcher.register(handleAction);
 
 module.exports = CollectionStore;
