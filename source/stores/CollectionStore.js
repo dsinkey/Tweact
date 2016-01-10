@@ -28,6 +28,24 @@ function emitChange(){
 	Collection.emit(CHANGE_EVENT);
 }
 
+var CollectionStore = assign({}, EventEmitter.prototype,{
 
+	addChangeListener: function(callback){
+		this.on(CHANGE_EVENT, callback);
+	},
+
+	removeChangeListener: function(callback){
+		this.removeListener(CHANGE_EVENT, callback);
+	},
+
+	getCollectionTweets: function(){
+		return collectionTweets;
+	},
+
+	getCollectionName: function(){
+		return collectionName;
+	}
+	
+});
 
 module.exports = CollectionStore;
